@@ -1,9 +1,10 @@
 import Currency from './3-currency';
 
-export default class Pricing {
+export default class Pricing extends Currency {
   constructor(amount, currency) {
     super(currency.code, currency.name);
     this._amount = amount;
+    this._currency = currency;
   }
 
   get amount() {
@@ -13,6 +14,11 @@ export default class Pricing {
   set amount(value) {
     this._amount = value;
   }
+
+  set currency(newCurrency) {
+    this._currency = newCurrency;
+  }
+
 
   static convertPrice(amount, conversionRate) {
     return amount * conversionRate;
