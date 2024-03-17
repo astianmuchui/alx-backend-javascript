@@ -14,6 +14,10 @@ export default class Pricing extends Currency {
     this._amount = value;
   }
 
+  static convertPrice(amount, conversionRate) {
+    return amount * conversionRate;
+  }
+
   displayFullPrice() {
     return `${this._amount} ${this._name} (${this._code})`;
   }
