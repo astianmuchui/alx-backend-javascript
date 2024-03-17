@@ -1,6 +1,6 @@
 import Currency from './3-currency';
 
-export default class Pricing extends Currency {
+export default class Pricing {
   constructor(amount, currency) {
     super(currency.code, currency.name);
     this._amount = amount;
