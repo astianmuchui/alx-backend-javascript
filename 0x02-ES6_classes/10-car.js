@@ -30,6 +30,13 @@ export default class Car {
   }
 
   cloneCar() {
-    return new Car(this._brand, this._motor, this._color);
+    const clonedCar = new this.constructor();
+
+    for (const key in this) {
+      if (Object.prototype.hasOwnProperty.call(this, key) && key.startsWith('_')) {
+        clonedCar[key] = this[key];
+      }
+    }
+    return clonedCar;
   }
 }
