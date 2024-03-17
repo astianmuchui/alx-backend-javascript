@@ -1,5 +1,6 @@
-import Currency from "./3-currency.js";
-export default class Pricing extends Currency{
+import Currency from './3-currency';
+
+export default class Pricing extends Currency {
   constructor(amount, currency) {
     super(currency.code, currency.name);
     this._amount = amount;
