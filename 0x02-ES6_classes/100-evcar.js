@@ -15,13 +15,14 @@ export default class EVCar extends Car {
   }
 
   cloneCar() {
-    const clonedCar = new Car.constructor();
+    const clonedCar = new Car();
 
     for (const key in this) {
       if (Object.prototype.hasOwnProperty.call(this, key) && key.startsWith('_')) {
         clonedCar[key] = this[key];
       }
     }
+
     return clonedCar;
   }
 }
