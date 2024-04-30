@@ -1,16 +1,16 @@
-const readl = require('readline');
+#!/usr/bin/node
+const process = require('process');
 
-const rl = readl.createInterface({
-  input: process.stdin,
-  output: process.stdout,
+process.stdout.write('Welcome to Holberton School, what is your name?\n');
+
+process.stdin.on('readable', () => {
+  const data = process.stdin.read();
+
+  if (data) {
+    process.stdout.write(`Your name is: ${data}`);
+  }
 });
 
-rl.question('Welcome to Holberton School, what is your name?', (answer) => {
-  process.stdout.write(`Your name is: ${answer}!`);
-  rl.close();
-});
-
-rl.on('close', () => {
+process.stdin.on('end', () => {
   process.stdout.write('This important software is now closing\n');
-  process.exit(0);
 });
