@@ -5,7 +5,9 @@ const app = http.createServer((req, res) => {
   res.end('Hello Holberton School!\n');
 });
 
-app.listen(1245, () => {
+const port = 1245 | process.env.PORT;
+
+app.listen(port, () => {
   console.log('Server is running on port 1245');
 });
 
