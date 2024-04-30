@@ -11,7 +11,7 @@ const app = http.createServer(async (req, res) => {
     } else if (req.url === '/students') {
       res.write('This is the list of our students\n');
 
-      const data = countStudents("./database.csv");
+      const data = countStudents('./database.csv');
 
       res.end(`${data.join('\n')}`);
     } else {
