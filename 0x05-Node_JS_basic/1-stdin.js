@@ -1,13 +1,16 @@
-process.stdout.write('Welcome to Holberton School, what is your name? \n');
+const readl = require('readline');
 
-process.stdin.on('readable', () => {
-  const data = process.stdin.read();
-
-  if (data) {
-    process.stdout.write(`Your name is: ${data}\n`);
-  }
+const rl = readl.createInterface({
+  input: process.stdin,
+  output: process.stdout,
 });
 
-process.stdin.on('end', () => {
+rl.question('Welcome to Holberton School, what is your name?', (answer) => {
+  process.stdout.write(`Your name is: ${answer}!`);
+  rl.close();
+});
+
+rl.on('close', () => {
   process.stdout.write('This important software is now closing\n');
+  process.exit(0);
 });
