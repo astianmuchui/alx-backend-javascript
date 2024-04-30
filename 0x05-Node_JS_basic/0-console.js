@@ -1,5 +1,8 @@
+#!/usr/bin/node
 const process = require('process');
 
-module.exports = function displayMessage(arg) {
+function displayMessage(arg) {
   process.stdout.write(arg);
-};
+}
+
+module.exports = displayMessage;
